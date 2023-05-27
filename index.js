@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-  io.on('connection', (socket) => {
+  io.on('connection', (socket,{path: "/test"}) => {
     console.log('a user connected');
     socket.on('disconnect', () => {
       console.log('user disconnected');
